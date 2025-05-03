@@ -5,17 +5,50 @@ export default defineComponent({
     setup() {
         
     },
-      name: 'FaSolidAlignJustify'
+    data() {
+        return {
+            searchText: '' //Armazena oque o usuario digitar
+        }
+    },
+    methods: {
+        doSearch() {
+            if (this.searchText.trim() === '') {
+                alert('Digite algo para buscar')
+                return
+            }
+            console.log('Buscando:', this.searchText)
+            //Aqui farei a busca real quando o back estiver pronto
+        }
+    }
 })
 
 </script>
 
 <template>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <img src="../image/logoIzaias.png" alt="">
-            <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512"><!-- Icon from Font Awesome 5 Solid by Dave Gandy - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16m0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16m0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16m0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16"></path></svg>
-
+            <div class="col-12">
+                <div class="left-elements d-flex">
+                    <img src="../image/logo2.png" alt="">
+                    <i class="bi bi-list"></i>
+                </div>
+                <div class="right-elements d-flex align-items-center">
+                    <div class="search-box d-flex">
+                        <input type="text"
+                            placeholder="Digite para buscar..."
+                            v-model="searchText"
+                        >
+                        <button @click="doSearch">Buscar</button>
+                    </div>
+                    <div class="rotas d-flex gap-3">
+                        <i class="bi bi-journal-check"></i>
+                        <i class="bi bi-mortarboard"></i>
+                        <i class="bi bi-bar-chart"></i>
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <i class="bi bi-person-circle"></i>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -23,21 +56,64 @@ export default defineComponent({
 <style>
 body{
     margin: 0;
+    padding: 0;
+        flex-shrink: 0;
+    box-sizing: border-box;
 }
-.container {
- background-color: aquamarine;
-}
-.row{
-    background-color: blueviolet;
-    height: 7vh;
-    width: 100%;
+
+.row .col-12{
+    background-color: rgb(12, 39, 189);
+    height: 9vh;
     display: flex;
-    align-items: center;
+    align-items: center; /* alinha verticalmente */
+    flex-wrap: nowrap;
+        flex-shrink: 0;
 }
-svg {
-    height: 40px;
-    width: 40px;
-    color:aliceblue;
-    padding-left: 10px;
+
+.row img {
+    height: 70px;
+    width: auto; /* mantém a proporção */
+}
+
+.bi-list {
+    font-size: 40px; /* tamanho do ícone */
+    color: white; /* cor do ícone */
+    padding: 0 20px;
+}
+
+.right-elements {
+    margin-left:5%;  
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+.right-elements i{
+    font-size: 30px;
+    color: #fff;
+}
+
+input {
+    padding: 10px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+button:hover {
+    background: #42b983;
+}
+
+@media (max-width: 1000px) {
+    input {
+        width: 80%;
+    }
 }
 </style>
