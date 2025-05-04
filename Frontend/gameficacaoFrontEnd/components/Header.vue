@@ -50,6 +50,34 @@ export default defineComponent({
                 </div>
             </div>
         </div>
+        <div class="sidebar-esquerdo col-4" style="background-color: rgb(12, 39, 189);">
+            <div class="person gap-3">
+                <i class="bi bi-person-circle"></i>
+                <div class="name">
+                    <span class="">IZAIAS RAMOS FRANÇA DE</span>
+                </div>
+            </div>
+            <div class="search-box d-flex p-3">
+                    <input type="text"
+                        placeholder="Digite para buscar..."
+                        v-model="searchText"
+                    >
+                    <button @click="doSearch">Buscar</button>
+            </div>
+            <!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-outline-white dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+        </div>
     </div>
 </template>
 
@@ -59,6 +87,10 @@ body{
     padding: 0;
         flex-shrink: 0;
     box-sizing: border-box;
+}
+.container-fluid {
+    padding: 0;
+    margin: 0;
 }
 
 .row .col-12{
@@ -111,6 +143,27 @@ button:hover {
     background: #42b983;
 }
 
+/* Sidebar Esquerdo */
+
+.sidebar-esquerdo{
+    padding: 0;
+    margin: 0;
+    height: 98.5vw;
+}
+.person{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person i {
+    font-size: 40px;
+    color: #fff;
+    margin-left: 10px;
+}
+.name {
+    color: #fff;
+}
 @media (max-width: 1000px) {
     input {
         width: 80%;
