@@ -1,0 +1,129 @@
+body{
+    margin: 0;
+    padding: 0;
+        flex-shrink: 0;
+    box-sizing: border-box;
+}
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.row .col-12{
+    background-color: rgb(12, 39, 189);
+    height: 9vh;
+    display: flex;
+    align-items: center; /* alinha verticalmente */
+    flex-wrap: nowrap;
+        flex-shrink: 0;
+}
+
+.row img {
+    height: 70px;
+    width: auto; /* mantém a proporção */
+}
+
+.bi-list {
+    font-size: 40px; /* tamanho do ícone */
+    color: white; /* cor do ícone */
+    padding: 0 20px;
+}
+
+.right-elements {
+    margin-left:5%;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+.right-elements i{
+    font-size: 30px;
+    color: #fff;
+}
+
+input {
+    padding: 10px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+button:hover {
+    background: #42b983;
+}
+
+/* Sidebar Esquerdo */
+.sidebar-esquerdo{
+    gap: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: fixed;
+    top: 9vh;
+    background-color: rgb(12, 39, 189);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0 10px 10px 10px;
+    transition: all 0.3s ease;
+    height: 100vh;
+}
+.person{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person i {
+    font-size: 40px;
+    color: #fff;
+}
+.name {
+    color: #fff;
+}
+
+.input-sidebar {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    margin-left: 0px;
+}
+.sidebar-esquerdo button {
+    padding: 10px 15px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+button:hover {
+    background: #42b983;
+}
+/* Estilo para o botão de dropdown */
+.btn-group {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    width: 50%;
+}
+.btn-group button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    width: 100px;
+    padding: 10px 100%;
+    border-radius: 4px;
+}
+.btn-group .btn:hover {
+    background-color: #42b983;
+}
+@media (max-width: 1000px) {
+    input {
+        width: 80%;
+    }
+}
